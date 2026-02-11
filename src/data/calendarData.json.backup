@@ -1,0 +1,522 @@
+{
+    "months": [
+        {
+            "gregorianMonth": 1,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Rajab 1447"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-01-01",
+                    "hijriDay": 1,
+                    "hijriMonth": "Rajab",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Imam Muhammad Baqir (as)",
+                    "eventNameUrdu": "ولادت امام محمد باقر علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 5th Imam, Muhammad al-Baqir (as)"
+                },
+                {
+                    "gregorianDate": "2026-01-03",
+                    "hijriDay": 3,
+                    "hijriMonth": "Rajab",
+                    "hijriYear": 1447,
+                    "eventName": "Shahadat Imam Ali Naqi (as)",
+                    "eventNameUrdu": "شہادت امام علی نقی علیہ السلام",
+                    "eventType": "shahadat",
+                    "description": "Martyrdom anniversary of the 10th Imam, Ali al-Naqi (as)"
+                },
+                {
+                    "gregorianDate": "2026-01-10",
+                    "hijriDay": 10,
+                    "hijriMonth": "Rajab",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Imam Muhammad Taqi (as)",
+                    "eventNameUrdu": "ولادت امام محمد تقی علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 9th Imam, Muhammad al-Taqi (as)"
+                },
+                {
+                    "gregorianDate": "2026-01-13",
+                    "hijriDay": 13,
+                    "hijriMonth": "Rajab",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Imam Ali (as)",
+                    "eventNameUrdu": "ولادت حضرت علی علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of Imam Ali ibn Abi Talib (as), born inside the Holy Kaaba"
+                },
+                {
+                    "gregorianDate": "2026-01-15",
+                    "hijriDay": 15,
+                    "hijriMonth": "Rajab",
+                    "hijriYear": 1447,
+                    "eventName": "Wafat Janabe Zainab (sa)",
+                    "eventNameUrdu": "وفات جناب زینب سلام اللہ علیہا",
+                    "eventType": "shahadat",
+                    "description": "Death anniversary of Sayyeda Zainab bint Ali (sa)"
+                },
+                {
+                    "gregorianDate": "2026-01-25",
+                    "hijriDay": 25,
+                    "hijriMonth": "Rajab",
+                    "hijriYear": 1447,
+                    "eventName": "Shahadat Imam Musa Kazim (as)",
+                    "eventNameUrdu": "شہادت امام موسیٰ کاظم علیہ السلام",
+                    "eventType": "shahadat",
+                    "description": "Martyrdom anniversary of the 7th Imam, Musa al-Kazim (as)"
+                },
+                {
+                    "gregorianDate": "2026-01-27",
+                    "hijriDay": 27,
+                    "hijriMonth": "Rajab",
+                    "hijriYear": 1447,
+                    "eventName": "Shab-e-Meraj / Mab'ath",
+                    "eventNameUrdu": "شب معراج / مبعث",
+                    "eventType": "eid",
+                    "description": "The Night of Ascension (Meraj) and the beginning of the Holy Prophet's (saw) prophetic mission"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 2,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Shaban 1447"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-02-01",
+                    "hijriDay": 3,
+                    "hijriMonth": "Shaban",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Imam Husayn (as)",
+                    "eventNameUrdu": "ولادت امام حسین علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 3rd Imam, Husayn ibn Ali (as), the Master of Martyrs"
+                },
+                {
+                    "gregorianDate": "2026-02-02",
+                    "hijriDay": 4,
+                    "hijriMonth": "Shaban",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Hazrat Abbas (as)",
+                    "eventNameUrdu": "ولادت حضرت عباس علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of Hazrat Abbas ibn Ali (as), the Moon of Banu Hashim"
+                },
+                {
+                    "gregorianDate": "2026-02-03",
+                    "hijriDay": 5,
+                    "hijriMonth": "Shaban",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Imam Zain ul-Abideen (as)",
+                    "eventNameUrdu": "ولادت امام زین العابدین علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 4th Imam, Ali ibn al-Husayn Zain ul-Abideen (as)"
+                },
+                {
+                    "gregorianDate": "2026-02-09",
+                    "hijriDay": 11,
+                    "hijriMonth": "Shaban",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Hazrat Ali Akbar (as)",
+                    "eventNameUrdu": "ولادت حضرت علی اکبر علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of Hazrat Ali Akbar (as), son of Imam Husayn (as)"
+                },
+                {
+                    "gregorianDate": "2026-02-13",
+                    "hijriDay": 15,
+                    "hijriMonth": "Shaban",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Imam Mahdi (ajtf) — Jashn-e-Neem-e-Shaban",
+                    "eventNameUrdu": "ولادت امام مہدی عجل اللہ فرجہ — جشن نیم شعبان",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 12th Imam, Muhammad al-Mahdi (ajtf), the Awaited Savior"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 3,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Ramadan 1447"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-02-28",
+                    "hijriDay": 1,
+                    "hijriMonth": "Ramadan",
+                    "hijriYear": 1447,
+                    "eventName": "Start of Mahe Ramadan",
+                    "eventNameUrdu": "ماہ رمضان کا آغاز",
+                    "eventType": "eid",
+                    "description": "Beginning of the holy month of fasting"
+                },
+                {
+                    "gregorianDate": "2026-03-14",
+                    "hijriDay": 15,
+                    "hijriMonth": "Ramadan",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Imam Hasan (as)",
+                    "eventNameUrdu": "ولادت امام حسن علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 2nd Imam, Hasan ibn Ali (as)"
+                },
+                {
+                    "gregorianDate": "2026-03-16",
+                    "hijriDay": 17,
+                    "hijriMonth": "Ramadan",
+                    "hijriYear": 1447,
+                    "eventName": "Jang-e-Badr",
+                    "eventNameUrdu": "جنگ بدر",
+                    "eventType": "eid",
+                    "description": "The Battle of Badr — the first major victory of Islam"
+                },
+                {
+                    "gregorianDate": "2026-03-18",
+                    "hijriDay": 19,
+                    "hijriMonth": "Ramadan",
+                    "hijriYear": 1447,
+                    "eventName": "Shab-e-Zarbat Imam Ali (as)",
+                    "eventNameUrdu": "شب ضربت امام علی علیہ السلام",
+                    "eventType": "shahadat",
+                    "description": "The night Imam Ali (as) was struck with a poisoned sword by Ibn Muljim"
+                },
+                {
+                    "gregorianDate": "2026-03-20",
+                    "hijriDay": 21,
+                    "hijriMonth": "Ramadan",
+                    "hijriYear": 1447,
+                    "eventName": "Shahadat Imam Ali (as)",
+                    "eventNameUrdu": "شہادت امام علی علیہ السلام",
+                    "eventType": "shahadat",
+                    "description": "Martyrdom of Imam Ali (as), the Commander of the Faithful"
+                },
+                {
+                    "gregorianDate": "2026-03-24",
+                    "hijriDay": 23,
+                    "hijriMonth": "Ramadan",
+                    "hijriYear": 1447,
+                    "eventName": "Shab-e-Qadr (Laylat al-Qadr)",
+                    "eventNameUrdu": "شب قدر",
+                    "eventType": "eid",
+                    "description": "The Night of Power — better than a thousand months"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 4,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Shawwal 1447"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-03-30",
+                    "hijriDay": 1,
+                    "hijriMonth": "Shawwal",
+                    "hijriYear": 1447,
+                    "eventName": "Eid ul-Fitr",
+                    "eventNameUrdu": "عید الفطر",
+                    "eventType": "eid",
+                    "description": "Celebration marking the end of Ramadan — Eid-e-Sagheer"
+                },
+                {
+                    "gregorianDate": "2026-04-06",
+                    "hijriDay": 8,
+                    "hijriMonth": "Shawwal",
+                    "hijriYear": 1447,
+                    "eventName": "Destruction of Jannat ul-Baqi",
+                    "eventNameUrdu": "انہدام جنت البقیع",
+                    "eventType": "shahadat",
+                    "description": "Anniversary of the demolition of the sacred graves in Jannat ul-Baqi"
+                },
+                {
+                    "gregorianDate": "2026-04-23",
+                    "hijriDay": 25,
+                    "hijriMonth": "Shawwal",
+                    "hijriYear": 1447,
+                    "eventName": "Shahadat Imam Jafar Sadiq (as)",
+                    "eventNameUrdu": "شہادت امام جعفر صادق علیہ السلام",
+                    "eventType": "shahadat",
+                    "description": "Martyrdom of the 6th Imam, Jafar al-Sadiq (as)"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 5,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Dhul Qadah 1447"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-04-28",
+                    "hijriDay": 1,
+                    "hijriMonth": "Dhul Qadah",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Hazrat Masumah (sa)",
+                    "eventNameUrdu": "ولادت حضرت معصومہ سلام اللہ علیہا",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of Hazrat Fatimah Masumah (sa) of Qum"
+                },
+                {
+                    "gregorianDate": "2026-05-08",
+                    "hijriDay": 11,
+                    "hijriMonth": "Dhul Qadah",
+                    "hijriYear": 1447,
+                    "eventName": "Wiladat Imam Reza (as)",
+                    "eventNameUrdu": "ولادت امام رضا علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 8th Imam, Ali ibn Musa al-Reza (as)"
+                },
+                {
+                    "gregorianDate": "2026-05-22",
+                    "hijriDay": 25,
+                    "hijriMonth": "Dhul Qadah",
+                    "hijriYear": 1447,
+                    "eventName": "Dahw ul-Arz",
+                    "eventNameUrdu": "دحو الارض",
+                    "eventType": "eid",
+                    "description": "The day when the earth was spread from beneath the Holy Kaaba"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 6,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Dhul Hijjah 1447"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-06-07",
+                    "hijriDay": 10,
+                    "hijriMonth": "Dhul Hijjah",
+                    "hijriYear": 1447,
+                    "eventName": "Eid ul-Adha",
+                    "eventNameUrdu": "عید الاضحیٰ",
+                    "eventType": "eid",
+                    "description": "The Festival of Sacrifice — Eid-e-Qurban"
+                },
+                {
+                    "gregorianDate": "2026-06-15",
+                    "hijriDay": 18,
+                    "hijriMonth": "Dhul Hijjah",
+                    "hijriYear": 1447,
+                    "eventName": "Eid-e-Ghadeer",
+                    "eventNameUrdu": "عید غدیر",
+                    "eventType": "eid",
+                    "description": "The greatest Eid — declaration of Imamat of Ali (as) at Ghadeer Khumm"
+                },
+                {
+                    "gregorianDate": "2026-06-23",
+                    "hijriDay": 24,
+                    "hijriMonth": "Dhul Hijjah",
+                    "hijriYear": 1447,
+                    "eventName": "Eid-e-Mubahila",
+                    "eventNameUrdu": "عید مباہلہ",
+                    "eventType": "eid",
+                    "description": "The day of Mubahila (mutual invocation) with Christians of Najran"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 7,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Muharram 1448"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-06-27",
+                    "hijriDay": 1,
+                    "hijriMonth": "Muharram",
+                    "hijriYear": 1448,
+                    "eventName": "Start of Muharram ul-Haram",
+                    "eventNameUrdu": "محرم الحرام کا آغاز",
+                    "eventType": "shahadat",
+                    "description": "Beginning of the sacred month of mourning"
+                },
+                {
+                    "gregorianDate": "2026-07-06",
+                    "hijriDay": 10,
+                    "hijriMonth": "Muharram",
+                    "hijriYear": 1448,
+                    "eventName": "Ashura — Shahadat Imam Husayn (as)",
+                    "eventNameUrdu": "عاشورہ — شہادت امام حسین علیہ السلام",
+                    "eventType": "shahadat",
+                    "description": "The martyrdom of Imam Husayn (as) and his companions at Karbala"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 8,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Safar 1448"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-08-02",
+                    "hijriDay": 7,
+                    "hijriMonth": "Safar",
+                    "hijriYear": 1448,
+                    "eventName": "Wiladat Imam Musa Kazim (as)",
+                    "eventNameUrdu": "ولادت امام موسیٰ کاظم علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 7th Imam, Musa al-Kazim (as)"
+                },
+                {
+                    "gregorianDate": "2026-08-13",
+                    "hijriDay": 20,
+                    "hijriMonth": "Safar",
+                    "hijriYear": 1448,
+                    "eventName": "Chehlum (Arbaeen) Imam Husayn (as)",
+                    "eventNameUrdu": "اربعین — چہلم امام حسین علیہ السلام",
+                    "eventType": "shahadat",
+                    "description": "The 40th day after the martyrdom of Imam Husayn (as) — Arbaeen"
+                },
+                {
+                    "gregorianDate": "2026-08-26",
+                    "hijriDay": 28,
+                    "hijriMonth": "Safar",
+                    "hijriYear": 1448,
+                    "eventName": "Wafat e Rasool (saw) & Shahadat Imam Hasan (as)",
+                    "eventNameUrdu": "وفات رسول ص و شہادت امام حسن ع",
+                    "eventType": "shahadat",
+                    "description": "Passing of Prophet Muhammad (saw) and martyrdom of Imam Hasan (as)"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 9,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Rabi ul-Awal 1448"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-09-02",
+                    "hijriDay": 9,
+                    "hijriMonth": "Rabi ul-Awal",
+                    "hijriYear": 1448,
+                    "eventName": "Eid-e-Zehra (sa)",
+                    "eventNameUrdu": "عید زہرا سلام اللہ علیہا",
+                    "eventType": "eid",
+                    "description": "A day of joy celebrating the demise of the enemies of Ahl ul-Bayt"
+                },
+                {
+                    "gregorianDate": "2026-09-10",
+                    "hijriDay": 17,
+                    "hijriMonth": "Rabi ul-Awal",
+                    "hijriYear": 1448,
+                    "eventName": "Eid Milad un-Nabi (saw) & Wiladat Imam Jafar Sadiq (as)",
+                    "eventNameUrdu": "عید میلاد النبی ص و ولادت امام جعفر صادق ع",
+                    "eventType": "wiladat",
+                    "description": "Birth of Prophet Muhammad (saw) and Imam Jafar al-Sadiq (as)"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 10,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Rabi ul-Thani 1448"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-10-03",
+                    "hijriDay": 8,
+                    "hijriMonth": "Rabi ul-Thani",
+                    "hijriYear": 1448,
+                    "eventName": "Shahadat Imam Hasan Askari (as)",
+                    "eventNameUrdu": "شہادت امام حسن عسکری علیہ السلام",
+                    "eventType": "shahadat",
+                    "description": "Martyrdom of the 11th Imam, Hasan al-Askari (as)"
+                },
+                {
+                    "gregorianDate": "2026-10-06",
+                    "hijriDay": 10,
+                    "hijriMonth": "Rabi ul-Thani",
+                    "hijriYear": 1448,
+                    "eventName": "Wafat Bibi Masumah (sa)",
+                    "eventNameUrdu": "وفات بی بی معصومہ سلام اللہ علیہا",
+                    "eventType": "shahadat",
+                    "description": "Death anniversary of Hazrat Fatimah Masumah (sa) of Qum"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 11,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Jamadi ul-Awal 1448"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-10-30",
+                    "hijriDay": 3,
+                    "hijriMonth": "Jamadi ul-Awal",
+                    "hijriYear": 1448,
+                    "eventName": "Shahadat Bibi Fatimah Zahra (sa)",
+                    "eventNameUrdu": "شہادت بی بی فاطمہ زہرا سلام اللہ علیہا",
+                    "eventType": "shahadat",
+                    "description": "Martyrdom of Sayyeda Fatimah Zahra (sa) — Fadak date"
+                },
+                {
+                    "gregorianDate": "2026-11-12",
+                    "hijriDay": 15,
+                    "hijriMonth": "Jamadi ul-Awal",
+                    "hijriYear": 1448,
+                    "eventName": "Wiladat Imam Zain ul-Abideen (as)",
+                    "eventNameUrdu": "ولادت امام زین العابدین علیہ السلام",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of the 4th Imam — alternate date"
+                },
+                {
+                    "gregorianDate": "2026-11-22",
+                    "hijriDay": 20,
+                    "hijriMonth": "Jamadi ul-Awal",
+                    "hijriYear": 1448,
+                    "eventName": "Wiladat Bibi Fatimah Zahra (sa)",
+                    "eventNameUrdu": "ولادت بی بی فاطمہ زہرا سلام اللہ علیہا",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of Sayyeda Fatimah Zahra (sa)"
+                }
+            ]
+        },
+        {
+            "gregorianMonth": 12,
+            "gregorianYear": 2026,
+            "hijriMonths": [
+                "Jamadi ul-Thani 1448"
+            ],
+            "events": [
+                {
+                    "gregorianDate": "2026-11-28",
+                    "hijriDay": 3,
+                    "hijriMonth": "Jamadi ul-Thani",
+                    "hijriYear": 1448,
+                    "eventName": "Shahadat Bibi Fatimah Zahra (sa)",
+                    "eventNameUrdu": "شہادت بی بی فاطمہ زہرا سلام اللہ علیہا",
+                    "eventType": "shahadat",
+                    "description": "Martyrdom of Sayyeda Fatimah Zahra (sa) — 95 days after Prophet's passing"
+                },
+                {
+                    "gregorianDate": "2026-12-15",
+                    "hijriDay": 20,
+                    "hijriMonth": "Jamadi ul-Thani",
+                    "hijriYear": 1448,
+                    "eventName": "Wiladat Bibi Fatimah Zahra (sa)",
+                    "eventNameUrdu": "ولادت بی بی فاطمہ زہرا سلام اللہ علیہا",
+                    "eventType": "wiladat",
+                    "description": "Birth anniversary of Sayyeda Fatimah Zahra (sa) — alternate date"
+                }
+            ]
+        }
+    ]
+}
