@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiCalendar, FiSunrise, FiSunset, FiClock } from 'react-icons/fi';
+import { getFiqhMethod, getFiqhSchool, getFiqhName } from './FiqhSelector';
 
 function formatTime12(time24) {
     if (!time24) return '--:--';
@@ -31,7 +32,7 @@ function getCurrentRamadanDay() {
     return null;
 }
 
-export default function RamadanTimesSelector({ location, updateLocation }) {
+export default function RamadanTimesSelector({ location, updateLocation, fiqh = 'jaferia' }) {
     const currentRamadanDay = getCurrentRamadanDay();
     const [selectedDay, setSelectedDay] = useState(currentRamadanDay || 1);
     const [dayPrayerTimes, setDayPrayerTimes] = useState(null);
@@ -53,9 +54,11 @@ export default function RamadanTimesSelector({ location, updateLocation }) {
                 const month = selectedDate.getMonth() + 1;
                 const year = selectedDate.getFullYear();
 
-                // Using method=0: Shia Ithna-Ashari (Leva Institute, Qum) - Jafari calculation
+                // Use the selected Fiqh calculation method
+                const method = getFiqhMethod(fiqh);
+                const school = getFiqhSchool(fiqh);
                 const response = await fetch(
-                    `https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${location.latitude}&longitude=${location.longitude}&method=0`
+                    `https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${location.latitude}&longitude=${location.longitude}&method=${method}&school=${school}`
                 );
 
                 if (!response.ok) throw new Error('Failed to fetch');
@@ -82,7 +85,7 @@ export default function RamadanTimesSelector({ location, updateLocation }) {
         };
 
         fetchDayTimes();
-    }, [selectedDay, location?.latitude, location?.longitude, location?.city]);
+    }, [selectedDay, location?.latitude, location?.longitude, location?.city, fiqh]);
 
     const handleDayChange = (day) => {
         setSelectedDay(day);
@@ -99,6 +102,7 @@ export default function RamadanTimesSelector({ location, updateLocation }) {
                 <div className="flex items-center gap-2">
                     <FiCalendar className="text-gold" size={20} />
                     <h3 className="text-lg font-serif text-cream">Ramadan 1447 Times</h3>
+                    <span className="text-[10px] text-cream/30 ml-1">{getFiqhName(fiqh)}</span>
                 </div>
                 {currentRamadanDay && (
                     <span className="text-xs text-gold/60 bg-gold/10 px-2 py-1 rounded">

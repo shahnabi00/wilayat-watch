@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { AppProvider } from './context/AppContext';
+import { AppProvider, useAppContext } from './context/AppContext';
 import { ThemeProvider } from './context/ThemeContext';
 import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
@@ -15,8 +15,13 @@ import Footer from './components/Footer';
 import { usePrayerTimes } from './hooks/usePrayerTimes';
 
 function AppContent() {
-  const prayerTimesData = usePrayerTimes();
+  const { fiqh, setFiqh } = useAppContext();
+  const prayerTimesData = usePrayerTimes(fiqh);
   const { prayerTimes, location, updateLocation, loading, error, refreshTimes } = prayerTimesData;
+  
+  useEffect(() => {
+    console.log('Fiqh changed in AppContent:', fiqh);
+  }, [fiqh]);
   
   return (
     <motion.div
@@ -39,11 +44,11 @@ function AppContent() {
             Islamic Calendar 2026
           </h2>
           <p className="text-sm md:text-base text-cream/40 max-w-lg mx-auto">
-            A comprehensive Fiqah Jafria calendar with accurate Shia prayer times,
-            important events, and Hijri date tracking.
+            A comprehensive Islamic calendar with accurate prayer times for both
+            Fiqh-e-Jaferia and Fiqh-e-Hanafiya, important events, and Hijri date tracking.
           </p>
           <p className="mt-2 font-arabic text-gold/30 text-lg">
-            تقویم اسلامی ۲۰۲۶ — فقہ جعفریہ
+            تقویم اسلامی ۲۰۲۶ — فقہ جعفریہ و حنفیہ
           </p>
         </motion.div>
 
@@ -65,6 +70,7 @@ function AppContent() {
             <RamadanTimesSelector 
               location={location} 
               updateLocation={updateLocation}
+              fiqh={fiqh}
             />
             <PrayerTimesCard 
               prayerTimes={prayerTimes}
@@ -72,6 +78,8 @@ function AppContent() {
               error={error}
               location={location}
               updateLocation={updateLocation}
+              fiqh={fiqh}
+              setFiqh={setFiqh}
             />
             <UpcomingEvents />
           </div>

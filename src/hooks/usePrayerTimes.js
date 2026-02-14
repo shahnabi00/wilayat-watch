@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { getFiqhMethod, getFiqhSchool } from '../components/FiqhSelector';
 
 const DEFAULT_LOCATION = {
     city: 'Rawalpindi',
@@ -9,7 +10,7 @@ const DEFAULT_LOCATION = {
 
 const STORAGE_KEY = 'wilayat-watch-location';
 
-export function usePrayerTimes() {
+export function usePrayerTimes(fiqh = 'jaferia') {
     const [location, setLocation] = useState(() => {
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
@@ -23,7 +24,7 @@ export function usePrayerTimes() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const fetchPrayerTimes = useCallback(async (loc, date = new Date()) => {
+    const fetchPrayerTimes = useCallback(async (loc, date = new Date(), selectedFiqh = 'jaferia') => {
         setLoading(true);
         setError(null);
 
@@ -32,11 +33,21 @@ export function usePrayerTimes() {
         const year = date.getFullYear();
 
         try {
-            // Using method=0: Shia Ithna-Ashari (Leva Institute, Qum) - Jafari calculation
-            // This is the authentic Fiqah Jafria method for prayer times
-            const response = await fetch(
-                `https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${loc.latitude}&longitude=${loc.longitude}&method=0`
-            );
+            // Get the calculation method based on selected Fiqh
+            // method=0: Shia Ithna-Ashari (Leva Institute, Qum) - Jafari calculation
+            // method=1: University of Islamic Sciences, Karachi - Hanafi calculation
+            // school=0: Shafi (earlier Asr) / school=1: Hanafi (later Asr)
+            const method = getFiqhMethod(selectedFiqh);
+            const school = getFiqhSchool(selectedFiqh);
+            
+            console.log(`Fetching prayer times for ${loc.city} with Fiqh: ${selectedFiqh}, Method: ${method}, School: ${school}`);
+            
+            // Add cache-busting parameter
+            const timestamp = Date.now();
+            const url = `https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${loc.latitude}&longitude=${loc.longitude}&method=${method}&school=${school}&_=${timestamp}`;
+            console.log('API URL:', url);
+            
+            const response = await fetch(url);
 
             if (!response.ok) {
                 throw new Error('Failed to fetch prayer times');
@@ -45,8 +56,11 @@ export function usePrayerTimes() {
             const data = await response.json();
             const timings = data.data.timings;
             const hijriDate = data.data.date.hijri;
+            
+            console.log('Raw API timings received:', timings);
+            console.log('API meta:', data.data.meta);
 
-            setPrayerTimes({
+            const newPrayerTimes = {
                 fajr: timings.Fajr,
                 sunrise: timings.Sunrise,
                 dhuhr: timings.Dhuhr,
@@ -55,9 +69,9 @@ export function usePrayerTimes() {
                 isha: timings.Isha,
                 imsak: timings.Imsak,
                 midnight: timings.Midnight,
-                // Fiqah Jafria mappings
+                // Sehri and Iftar times
                 sehri: timings.Imsak,    // Sehri ends at Imsak
-                iftar: timings.Maghrib,   // Iftar is at Maghrib (not Sunset)
+                iftar: timings.Maghrib,   // Iftar is at Maghrib
                 // Hijri date from API
                 hijriDay: hijriDate.day,
                 hijriMonth: hijriDate.month.en,
@@ -66,7 +80,20 @@ export function usePrayerTimes() {
                 hijriDesignation: hijriDate.designation.abbreviated,
                 // Gregorian info
                 gregorianDate: data.data.date.readable,
+            };
+            
+            console.log(`Prayer times received:`, {
+                fiqh: selectedFiqh,
+                fajr: newPrayerTimes.fajr,
+                dhuhr: newPrayerTimes.dhuhr,
+                asr: newPrayerTimes.asr,
+                maghrib: newPrayerTimes.maghrib,
+                isha: newPrayerTimes.isha,
+                sehri: newPrayerTimes.sehri,
+                iftar: newPrayerTimes.iftar
             });
+            
+            setPrayerTimes(newPrayerTimes);
         } catch (err) {
             setError(err.message || 'Unable to fetch prayer times. Please check your connection.');
         } finally {
@@ -84,12 +111,13 @@ export function usePrayerTimes() {
     }, []);
 
     useEffect(() => {
-        fetchPrayerTimes(location);
-    }, [location, fetchPrayerTimes]);
+        console.log('useEffect triggered - fetching prayer times with fiqh:', fiqh);
+        fetchPrayerTimes(location, new Date(), fiqh);
+    }, [location, fiqh, fetchPrayerTimes]);
 
     const refreshTimes = useCallback((date) => {
-        fetchPrayerTimes(location, date);
-    }, [location, fetchPrayerTimes]);
+        fetchPrayerTimes(location, date, fiqh);
+    }, [location, fiqh, fetchPrayerTimes]);
 
     return {
         prayerTimes,

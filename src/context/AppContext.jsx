@@ -2,12 +2,34 @@ import { createContext, useContext, useState, useCallback } from 'react';
 
 const AppContext = createContext(null);
 
+const FIQH_STORAGE_KEY = 'wilayat-watch-fiqh';
+
 export function AppProvider({ children }) {
     const today = new Date();
     const [selectedMonth, setSelectedMonth] = useState(today.getMonth() + 1);
     const [selectedYear, setSelectedYear] = useState(today.getFullYear());
     const [isLoading, setIsLoading] = useState(true);
     const [selectedEvent, setSelectedEvent] = useState(null);
+    
+    // Fiqh preference: 'jaferia' or 'hanafiya'
+    const [fiqh, setFiqhState] = useState(() => {
+        try {
+            const saved = localStorage.getItem(FIQH_STORAGE_KEY);
+            return saved || 'jaferia'; // Default to Jaferia
+        } catch {
+            return 'jaferia';
+        }
+    });
+
+    const setFiqh = useCallback((newFiqh) => {
+        console.log('AppContext - setFiqh called with:', newFiqh);
+        setFiqhState(newFiqh);
+        try {
+            localStorage.setItem(FIQH_STORAGE_KEY, newFiqh);
+        } catch {
+            // localStorage might be full or disabled
+        }
+    }, []);
 
     const navigateMonth = useCallback((direction) => {
         setSelectedMonth(prev => {
@@ -41,6 +63,8 @@ export function AppProvider({ children }) {
         setIsLoading,
         selectedEvent,
         setSelectedEvent,
+        fiqh,
+        setFiqh,
     };
 
     return (

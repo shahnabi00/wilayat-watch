@@ -134,7 +134,7 @@
           "hijriYear": 1447,
           "eventName": "Shab-e-Zurbat (Eve of 19th)",
           "eventNameUrdu": "شب ضربت",
-          "eventType": "special",
+          "eventType": "shahadat",
           "description": "Imam Ali (as) struck by sword"
         },
         {
@@ -324,7 +324,7 @@
           "hijriYear": 1448,
           "eventName": "Arrival of Imam Hussain in Karbala",
           "eventNameUrdu": "امام حسینؑ کی کربلا میں آمد",
-          "eventType": "special",
+          "eventType": "shahadat",
           "description": "Caravan reaches Karbala"
         },
         {
@@ -334,7 +334,7 @@
           "hijriYear": 1448,
           "eventName": "Shab-e-Ashur",
           "eventNameUrdu": "شب عاشور",
-          "eventType": "special",
+          "eventType": "shahadat",
           "description": "Eve of Ashura"
         },
         {
@@ -394,7 +394,7 @@
           "hijriYear": 1448,
           "eventName": "Chehlum (Arbaeen)",
           "eventNameUrdu": "چہلم - اربعین",
-          "eventType": "special",
+          "eventType": "shahadat",
           "description": "40th Day after Ashura"
         },
         {

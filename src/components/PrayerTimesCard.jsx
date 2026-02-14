@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FiSunrise, FiSunset, FiSun, FiMoon, FiClock, FiLoader } from 'react-icons/fi';
 import LocationSelector from './LocationSelector';
+import FiqhSelector, { getFiqhName } from './FiqhSelector';
 import { useState, useEffect } from 'react';
 
 const prayerList = [
@@ -11,9 +12,19 @@ const prayerList = [
     { key: 'isha', label: 'Isha', icon: FiMoon, labelUrdu: 'عشاء' },
 ];
 
+function parseTime(timeStr) {
+    if (!timeStr) return NaN;
+    // Strip any timezone suffix like "(PKT)" and trim
+    const clean = timeStr.replace(/\s*\(.*\)/, '').trim();
+    const [h, m] = clean.split(':').map(Number);
+    return h * 60 + m;
+}
+
 function formatTime12(time24) {
     if (!time24) return '--:--';
-    const [h, m] = time24.split(':').map(Number);
+    const clean = time24.replace(/\s*\(.*\)/, '').trim();
+    const [h, m] = clean.split(':').map(Number);
+    if (isNaN(h) || isNaN(m)) return '--:--';
     const period = h >= 12 ? 'PM' : 'AM';
     const h12 = h === 0 ? 12 : h > 12 ? h - 12 : h;
     return `${h12}:${String(m).padStart(2, '0')} ${period}`;
@@ -34,8 +45,8 @@ function getCurrentPrayer(prayerTimes) {
     ];
     
     for (let i = 0; i < prayers.length; i++) {
-        const [h, m] = prayers[i].time.split(':').map(Number);
-        const prayerMinutes = h * 60 + m;
+        const prayerMinutes = parseTime(prayers[i].time);
+        if (isNaN(prayerMinutes)) continue;
         
         if (currentMinutes < prayerMinutes) {
             return i > 0 ? prayers[i - 1].key : null;
@@ -45,8 +56,9 @@ function getCurrentPrayer(prayerTimes) {
     return prayers[prayers.length - 1].key;
 }
 
-export default function PrayerTimesCard({ prayerTimes, loading, error, location, updateLocation }) {
+export default function PrayerTimesCard({ prayerTimes, loading, error, location, updateLocation, fiqh, setFiqh }) {
     const [currentPrayer, setCurrentPrayer] = useState(null);
+    const [lastUpdated, setLastUpdated] = useState(null);
     
     useEffect(() => {
         const updateCurrent = () => {
@@ -59,53 +71,25 @@ export default function PrayerTimesCard({ prayerTimes, loading, error, location,
         return () => clearInterval(interval);
     }, [prayerTimes]);
 
+    useEffect(() => {
+        if (prayerTimes) {
+            setLastUpdated(new Date().toLocaleTimeString());
+        }
+    }, [prayerTimes]);
+
     return (
         <div className="space-y-4">
+            {/* Fiqh selector */}
+            <FiqhSelector fiqh={fiqh} onFiqhChange={setFiqh} />
+            
             {/* Location selector */}
             <LocationSelector location={location} onLocationChange={updateLocation} />
 
-            {/* Sehri & Iftar highlight */}
-            <div className="grid grid-cols-2 gap-3">
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="prayer-card text-center"
-                >
-                    <div className="relative z-10">
-                        <FiSunrise className="mx-auto text-gold/60 mb-2" size={24} />
-                        <p className="text-xs text-gold/50 uppercase tracking-wider mb-1">Sehri Ends</p>
-                        <p className="text-xs text-gold/40 font-arabic mb-1">سحری</p>
-                        {loading ? (
-                            <FiLoader className="mx-auto text-gold/40 animate-spin" size={20} />
-                        ) : (
-                            <p className="text-xl font-serif text-cream font-semibold">
-                                {formatTime12(prayerTimes?.sehri)}
-                            </p>
-                        )}
-                        <p className="text-[10px] text-cream/30 mt-1">Imsak</p>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className="prayer-card text-center"
-                >
-                    <div className="relative z-10">
-                        <FiSunset className="mx-auto text-gold/60 mb-2" size={24} />
-                        <p className="text-xs text-gold/50 uppercase tracking-wider mb-1">Iftar</p>
-                        <p className="text-xs text-gold/40 font-arabic mb-1">افطار</p>
-                        {loading ? (
-                            <FiLoader className="mx-auto text-gold/40 animate-spin" size={20} />
-                        ) : (
-                            <p className="text-xl font-serif text-cream font-semibold">
-                                {formatTime12(prayerTimes?.iftar)}
-                            </p>
-                        )}
-                        <p className="text-[10px] text-cream/30 mt-1">Maghrib</p>
-                    </div>
-                </motion.div>
+            {/* Current Fiqh Badge */}
+            <div className="text-center py-2 px-4 bg-gold/5 border border-gold/20 rounded-lg">
+                <p className="text-xs text-gold/70">
+                    Currently showing times for: <span className="font-semibold text-gold">{fiqh === 'jaferia' ? 'Fiqh-e-Jaferia' : 'Fiqh-e-Hanafiya'}</span>
+                </p>
             </div>
 
             {/* Today's Hijri date */}
@@ -126,12 +110,19 @@ export default function PrayerTimesCard({ prayerTimes, loading, error, location,
             )}
 
             {/* All prayer times */}
-            <div className="glass-card p-4">
-                <h3 className="text-xs text-gold/50 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <FiClock size={12} />
-                    Prayer Times
-                    <span className="text-cream/30">• Method: Shia (Qum)</span>
-                </h3>
+            <div className="glass-card p-4" key={`prayer-times-${fiqh}`}>
+                <div className="flex items-start justify-between mb-3">
+                    <h3 className="text-xs text-gold/50 uppercase tracking-wider flex items-center gap-2">
+                        <FiClock size={12} />
+                        Prayer Times
+                        <span className="text-cream/30">• {getFiqhName(fiqh)}</span>
+                    </h3>
+                    {lastUpdated && (
+                        <span className="text-[10px] text-cream/20">
+                            Updated: {lastUpdated}
+                        </span>
+                    )}
+                </div>
 
                 <div className="space-y-2">
                     {prayerList.map(({ key, label, icon: Icon, labelUrdu }, index) => {
